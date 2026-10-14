@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head><meta charset="UTF-8">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<title>Blog posts of the week – Oracle Analytics by Adrian Ward</title>
+<meta name="robots" content="max-image-preview:large">
+<link rel="alternate" type="application/rss+xml" title="Oracle Analytics by Adrian Ward » Feed" href="/feed/">
+<link rel="alternate" type="application/rss+xml" title="Oracle Analytics by Adrian Ward » Comments Feed" href="/comments/feed/">
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=%2Fblog-posts-of-the-week%2F">
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=%2Fblog-posts-of-the-week%2F&amp;format=xml">
+<style id="wp-img-auto-sizes-contain-inline-css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<link rel="stylesheet" id="minimalist-blogger-x-simple-css" href="/wp-content/themes/minimalist-blogger-x/css/simple-theme-mode.css?ver=105.1" media="all">
+<style id="wp-emoji-styles-inline-css">
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+/*# sourceURL=wp-emoji-styles-inline-css */
+</style>
+<style id="wp-block-library-inline-css">
+:root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,160.5;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}:root .has-text-align-center{text-align:center}:root .has-text-align-left{text-align:left}:root .has-text-align-right{text-align:right}.has-fit-text{white-space:nowrap!important}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{word-wrap:normal!important;border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style*=border-color]){border-style:solid}html :where([style*=border-top-color]){border-top-style:solid}html :where([style*=border-right-color]){border-right-style:solid}html :where([style*=border-bottom-color]){border-bottom-style:solid}html :where([style*=border-left-color]){border-left-style:solid}html :where([style*=border-width]){border-style:solid}html :where([style*=border-top-width]){border-top-style:solid}html :where([style*=border-right-width]){border-right-style:solid}html :where([style*=border-bottom-width]){border-bottom-style:solid}html :where([style*=border-left-width]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
+
+/*# sourceURL=/wp-includes/css/dist/block-library/common.min.css */
+</style>
+<style id="wp-block-image-inline-css">
+.wp-block-image>a,.wp-block-image>figure>a{display:inline-block}.wp-block-image img{box-sizing:border-box;height:auto;max-width:100%;vertical-align:bottom}@media not (prefers-reduced-motion){.wp-block-image img.hide{visibility:hidden}.wp-block-image img.show{animation:show-content-image .4s}}.wp-block-image[style*=border-radius] img,.wp-block-image[style*=border-radius]>a{border-radius:inherit}.wp-block-image.has-custom-border img{box-sizing:border-box}.wp-block-image.aligncenter{text-align:center}.wp-block-image.alignfull>a,.wp-block-image.alignwide>a{width:100%}.wp-block-image.alignfull img,.wp-block-image.alignwide img{height:auto;width:100%}.wp-block-image .aligncenter,.wp-block-image .alignleft,.wp-block-image .alignright,.wp-block-image.aligncenter,.wp-block-image.alignleft,.wp-block-image.alignright{display:table}.wp-block-image .aligncenter>figcaption,.wp-block-image .alignleft>figcaption,.wp-block-image .alignright>figcaption,.wp-block-image.aligncenter>figcaption,.wp-block-image.alignleft>figcaption,.wp-block-image.alignright>figcaption{caption-side:bottom;display:table-caption}.wp-block-image .alignleft{float:left;margin:.5em 1em .5em 0}.wp-block-image .alignright{float:right;margin:.5em 0 .5em 1em}.wp-block-image .aligncenter{margin-left:auto;margin-right:auto}.wp-block-image :where(figcaption){margin-bottom:1em;margin-top:.5em}.wp-block-image.is-style-circle-mask img{border-radius:9999px}@supports ((-webkit-mask-image:none) or (mask-image:none)) or (-webkit-mask-image:none){.wp-block-image.is-style-circle-mask img{border-radius:0;-webkit-mask-image:url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"/></svg>');mask-image:url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"/></svg>');mask-mode:alpha;-webkit-mask-position:center;mask-position:center;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-size:contain;mask-size:contain}}:root :where(.wp-block-image.is-style-rounded img,.wp-block-image .is-style-rounded img){border-radius:9999px}.wp-block-image figure{margin:0}.wp-lightbox-container{display:flex;flex-direction:column;position:relative}.wp-lightbox-container img{cursor:zoom-in}.wp-lightbox-container img:hover+button{opacity:1}.wp-lightbox-container button{align-items:center;backdrop-filter:blur(16px) saturate(180%);background-color:#5a5a5a40;border:none;border-radius:4px;cursor:zoom-in;display:flex;height:20px;justify-content:center;opacity:0;padding:0;position:absolute;right:16px;text-align:center;top:16px;width:20px;z-index:100}@media not (prefers-reduced-motion){.wp-lightbox-container button{transition:opacity .2s ease}}.wp-lightbox-container button:focus-visible{outline:3px auto #5a5a5a40;outline:3px auto -webkit-focus-ring-color;outline-offset:3px}.wp-lightbox-container button:hover{cursor:pointer;opacity:1}.wp-lightbox-container button:focus{opacity:1}.wp-lightbox-container button:focus,.wp-lightbox-container button:hover,.wp-lightbox-container button:not(:hover):not(:active):not(.has-background){background-color:#5a5a5a40;border:none}.wp-lightbox-overlay{box-sizing:border-box;cursor:zoom-out;height:100vh;left:0;overflow:hidden;position:fixed;top:0;visibility:hidden;width:100%;z-index:100000}.wp-lightbox-overlay .wp-lightbox-close-button{align-items:center;cursor:pointer;display:flex;font-family:inherit;gap:8px;justify-content:center;line-height:1;min-height:40px;min-width:40px;padding:0 4px;position:absolute;right:calc(env(safe-area-inset-right) + 16px);top:calc(env(safe-area-inset-top) + 16px);z-index:5000000}.wp-lightbox-overlay .wp-lightbox-close-button:focus,.wp-lightbox-overlay .wp-lightbox-close-button:hover,.wp-lightbox-overlay .wp-lightbox-close-button:not(:hover):not(:active):not(.has-background){background:none;border:none}.wp-lightbox-overlay .wp-lightbox-close-button:has(.wp-lightbox-close-text:not([hidden])) .wp-lightbox-close-icon svg{height:1em;width:1em}.wp-lightbox-overlay .wp-lightbox-close-icon svg{display:block}.wp-lightbox-overlay .wp-lightbox-navigation-button-next,.wp-lightbox-overlay .wp-lightbox-navigation-button-prev{align-items:center;bottom:16px;cursor:pointer;display:flex;font-family:inherit;gap:4px;justify-content:center;line-height:1;min-height:40px;min-width:40px;padding:0 8px;position:absolute;z-index:2000002}.wp-lightbox-overlay .wp-lightbox-navigation-button-next[hidden],.wp-lightbox-overlay .wp-lightbox-navigation-button-prev[hidden]{display:none}@media (min-width:960px){.wp-lightbox-overlay .wp-lightbox-navigation-button-next,.wp-lightbox-overlay .wp-lightbox-navigation-button-prev{bottom:50%;transform:translateY(-50%)}}.wp-lightbox-overlay .wp-lightbox-navigation-button-next:focus,.wp-lightbox-overlay .wp-lightbox-navigation-button-next:hover,.wp-lightbox-overlay .wp-lightbox-navigation-button-next:not(:hover):not(:active):not(.has-background),.wp-lightbox-overlay .wp-lightbox-navigation-button-prev:focus,.wp-lightbox-overlay .wp-lightbox-navigation-button-prev:hover,.wp-lightbox-overlay .wp-lightbox-navigation-button-prev:not(:hover):not(:active):not(.has-background){background:none;border:none;padding:0 8px}.wp-lightbox-overlay .wp-lightbox-navigation-button-next:has(.wp-lightbox-navigation-text:not([hidden])) .wp-lightbox-navigation-icon svg,.wp-lightbox-overlay .wp-lightbox-navigation-button-prev:has(.wp-lightbox-navigation-text:not([hidden])) .wp-lightbox-navigation-icon svg{display:block;height:1.5em;width:1.5em}.wp-lightbox-overlay .wp-lightbox-navigation-button-prev{left:calc(env(safe-area-inset-left) + 16px)}.wp-lightbox-overlay .wp-lightbox-navigation-button-next{right:calc(env(safe-area-inset-right) + 16px)}.wp-lightbox-overlay .wp-lightbox-navigation-icon svg{vertical-align:middle}.wp-lightbox-overlay .lightbox-image-container{height:var(--wp--lightbox-container-height);left:50%;overflow:hidden;position:absolute;top:50%;transform:translate(-50%,-50%);transform-origin:top left;width:var(--wp--lightbox-container-width);z-index:2000001}.wp-lightbox-overlay .wp-block-image{align-items:center;box-sizing:border-box;display:flex;height:100%;justify-content:center;margin:0;position:relative;transform-origin:0 0;width:100%;z-index:3000000}.wp-lightbox-overlay .wp-block-image img{height:var(--wp--lightbox-image-height);min-height:var(--wp--lightbox-image-height);min-width:var(--wp--lightbox-image-width);width:var(--wp--lightbox-image-width)}.wp-lightbox-overlay .wp-block-image figcaption{display:none}.wp-lightbox-overlay button{background:none;border:none}.wp-lightbox-overlay .scrim{background-color:#fff;height:100%;opacity:.9;position:absolute;width:100%;z-index:2000000}.wp-lightbox-overlay.active{visibility:visible}@media not (prefers-reduced-motion){.wp-lightbox-overlay.active{animation:turn-on-visibility .25s both}.wp-lightbox-overlay.active img{animation:turn-on-visibility .35s both}.wp-lightbox-overlay.show-closing-animation:not(.active){animation:turn-off-visibility .35s both}.wp-lightbox-overlay.show-closing-animation:not(.active) img{animation:turn-off-visibility .25s both}.wp-lightbox-overlay.zoom.active{animation:none;opacity:1;visibility:visible}.wp-lightbox-overlay.zoom.active .lightbox-image-container{animation:lightbox-zoom-in .4s}.wp-lightbox-overlay.zoom.active .lightbox-image-container img{animation:none}.wp-lightbox-overlay.zoom.active .scrim{animation:turn-on-visibility .4s forwards}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active){animation:none}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active) .lightbox-image-container{animation:lightbox-zoom-out .4s}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active) .lightbox-image-container img{animation:none}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active) .scrim{animation:turn-off-visibility .4s forwards}}@keyframes show-content-image{0%{visibility:hidden}99%{visibility:hidden}to{visibility:visible}}@keyframes turn-on-visibility{0%{opacity:0}to{opacity:1}}@keyframes turn-off-visibility{0%{opacity:1;visibility:visible}99%{opacity:0;visibility:visible}to{opacity:0;visibility:hidden}}@keyframes lightbox-zoom-in{0%{transform:translate(calc((-100vw + var(--wp--lightbox-scrollbar-width))/2 + var(--wp--lightbox-initial-left-position)),calc(-50vh + var(--wp--lightbox-initial-top-position))) scale(var(--wp--lightbox-scale))}to{transform:translate(-50%,-50%) scale(1)}}@keyframes lightbox-zoom-out{0%{transform:translate(-50%,-50%) scale(1);visibility:visible}99%{visibility:visible}to{transform:translate(calc((-100vw + var(--wp--lightbox-scrollbar-width))/2 + var(--wp--lightbox-initial-left-position)),calc(-50vh + var(--wp--lightbox-initial-top-position))) scale(var(--wp--lightbox-scale));visibility:hidden}}
+/*# sourceURL=/wp-includes/blocks/image/style.min.css */
+</style>
+
+<style id="classic-theme-styles-inline-css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+</style>
+
+<style id="global-styles-inline-css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}:where(body) { margin: 0; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+
+<link rel="stylesheet" id="minimalist-blogger-x-font-awesome-css" href="/wp-content/themes/minimalist-blogger-x/css/font-awesome.min.css?ver=7.0" media="all">
+<link rel="stylesheet" id="minimalist-blogger-x-style-css" href="/wp-content/themes/minimalist-blogger-x/style.css?ver=7.0" media="all">
+<link rel="stylesheet" id="minimalist-blogger-x-fonts-css" href="/wp-content/fonts/403a7bec291aa1b6e6875e4d35f2e57b.css?ver=1.0" media="all">
+<script id="jquery-core-js" src="/wp-includes/js/jquery/jquery.min.js?ver=3.7.1"></script>
+<script id="jquery-migrate-js" src="/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1"></script>
+<link rel="https://api.w.org/" href="/wp-json/"><link rel="alternate" title="JSON" type="application/json" href="/wp-json/wp/v2/posts/881"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 7.0">
+<link rel="canonical" href="/blog-posts-of-the-week/">
+<link rel="shortlink" href="/?p=881">
+		<style type="text/css">
+			
+				/**  */
+				.logo-container.navigation-layout-large.header-has-no-side-elements {
+					max-width: 100% !important;
+				}
+
+				.content-wrap.navigation-layout-large {
+					width: 1480px;
+					padding: 0;
+				}
+
+				.header-content-container.navigation-layout-large {
+					padding: 25px 0 20px;
+				}
+
+				.header-content-author-container,
+				.header-content-some-container {
+					display: flex;
+					align-items: center;
+					min-width: 300px;
+					max-width: 300px;
+				}
+
+				.header-content-some-container {
+					justify-content: right;
+				}
+
+				.header-content-some-container a {
+					text-align: center;
+				}
+
+				.logo-container.navigation-layout-large {
+					text-align: center;
+					width: 100%;
+					max-width: calc(100% - 600px);
+					padding: 0 10px;
+				}
+
+				.header-author-container-img-wrapper {
+					min-width: 60px;
+					min-height: 60px;
+					max-width: 60px;
+					max-height: 60px;
+					margin-right: 10px;
+					border-radius: 50%;
+					border-style: solid;
+					border-width: 2px;
+					border-color: var(--minimalist-blogger-x-primary);
+					overflow: hidden;
+					background-size: contain;
+					background-repeat: no-repeat;
+					background-position: center;
+				}
+
+				.header-author-container-text-wrapper .header-author-name {
+					display: block;
+					font-size: var(--font-primary-medium);
+					font-family: var(--font-primary);
+					font-weight: var(--font-primary-bold);
+					color: var(--minimalist-blogger-x-foreground);
+				}
+
+				.header-author-container-text-wrapper .header-author-tagline {
+					margin: 0;
+					font-family: var(--font-primary);
+					font-size: var(--font-primary-small);
+					display: block;
+					color: var(--minimalist-blogger-x-foreground);
+				}
+
+				.logo-container a.custom-logo-link {
+					margin-top: 0px;
+				}
+
+				.navigation-layout-large .site-title {
+					font-weight: var(--font-secondary-bold);
+					font-size: var(--font-primary-xxl);
+					margin: 0 0 5px 0;
+				}
+
+				p.logodescription {
+					margin-top: 0;
+				}
+
+				.header-content-some-container a {
+					padding: 15px 25px;
+					display: inline-block;
+				}
+
+				.header-content-some-container a:hover {
+					background-color: var(--minimalist-blogger-x-primary-dark);
+				}
+
+				.navigation-layout-large .center-main-menu {
+					max-width: 100%;
+				}
+
+				.navigation-layout-large .center-main-menu .pmenu {
+					text-align: center;
+					float: none;
+				}
+
+				.navigation-layout-large .center-main-menu .wc-nav-content {
+					justify-content: center;
+				}
+
+
+				.custom-logo-link img {
+					width: auto;
+					max-height: var(--minimalist-blogger-x-logo-height);
+				}
+			
+							
+				.all-blog-articles {
+					display: block;
+				}
+				.all-blog-articles .featured-img-box {
+					padding:30px 30px 0px 30px;
+				}
+				.all-blog-articles .post-meta-inner-wrapper {
+					margin-top: 30px;
+					display: inline-block;
+					background: var(--minimalist-blogger-x-background);
+					padding: 0px 19px;
+				}
+				.all-blog-articles .blog-data-wrapper:after {
+					content: ' ';
+					background: var(--minimalist-blogger-x-foreground);
+					width: 100%;
+					height: 1px;
+					display: block;
+					margin: -12px auto 0 auto;
+					max-width: 75%;
+				}
+				.all-blog-articles .no-featured-img-box .blogpost-is-sticky-icon, 
+				body:not(.woocommerce-page):not(.elementor-page) .all-blog-articles .blogpost-is-sticky-icon:not(.blogpost-is-sticky-icon-has-featured-image) {
+					width: 100%;
+					display: inline-block;
+					margin-left: 0px;
+					text-align: left;
+					padding-left: 15px;
+				}
+				.all-blog-articles .blogposts-list,
+				.add-blog-to-sidebar .all-blog-articles .blogposts-list {
+					width: 100%;
+					max-width: 100%;
+					flex: 100%;
+					text-align:center;
+				}
+				.all-blog-articles .post-meta-inner-wrapper {
+					margin-top:20px;
+				}
+				.all-blog-articles .blogposts-list .entry-content {
+					text-align:left;
+					margin-top:20px;
+				}
+				.all-blog-articles article h2,
+				.all-blog-articles .blogposts-list .entry-meta, .add-blog-to-sidebar .all-blog-articles .blogposts-list .entry-header .entry-meta{
+					text-align:center;
+				}
+				.all-blog-articles .blog-data-wrapper {
+					-webkit-box-pack:center;
+					-ms-flex-pack:center;
+					justify-content:center;
+				}
+
+				.all-blog-articles article h2.entry-title {
+					font-size: var(--font-secondary-xl);
+				}
+
+				@media (max-width: 1100px) {
+					.all-blog-articles article h2.entry-title {
+						font-size: var(--font-secondary-xl);
+					}
+				}
+
+				@media (max-width: 700px) {
+					.all-blog-articles article h2.entry-title {
+						font-size: var(--font-primary-large);
+					}
+					.all-blog-articles .featured-img-box {
+						padding:20px 20px 0px 20px;
+					}
+					.post-meta-inner-wrapper,
+					.post-meta-inner-wrapper * {
+						margin-top:15px;
+						font-size: var(--font-primary-normal);
+					}
+					.all-blog-articles .blog-data-wrapper:after {
+						max-width:100%;
+					}
+					.all-blog-articles .post-meta-inner-wrapper {
+						padding: 0px 10px;
+					}
+				}
+
+				.blogposts-list .featured-thumbnail {
+				height: 220px;
+				background-size: cover;
+				background-position: center;
+			}
+
+			.related-posts-posts .blogposts-list .featured-thumbnail {
+				height: 220px;
+			}
+
+			.all-blog-articles .featured-img-category {
+				display: none;
+			}
+
+		
+		/** COLOR SCHEME & LAYOUT VARIABLES **/
+		:root {
+			--minimalist-blogger-x-foreground: #000000;--minimalist-blogger-x-button-text-color: #ffffff;--minimalist-blogger-x-background: #ffffff;--minimalist-blogger-x-background-elements: #fafafa;--minimalist-blogger-x-border-mode-elements: #000000;--minimalist-blogger-x-primary: #000000;--minimalist-blogger-x-primary-dark: #1d1d1d;--minimalist-blogger-x-secondary: #000000;--minimalist-blogger-x-secondary-dark: #000000;--minimalist-blogger-x-light-2: #efefef;--minimalist-blogger-x-dark-1: #717171;--minimalist-blogger-x-input-background-color: #ffffff;--minimalist-blogger-x-select-color: #efefef;--minimalist-blogger-x-logo-height: 65px;--minimalist-blogger-x-element-border-radius: 2px;--minimalist-blogger-x-button-border-radius: 3px;		}
+
+		/**  **/
+	</style>
+
+			<style type="text/css">
+			.site-title a,
+			.site-description,
+			.logofont,
+			.site-title,
+			.logodescription {
+				color: #000000;
+			}
+
+			.site-title a,
+			.site-title,
+			.site-description,
+			.logodescription {
+				color: #000000;
+			}
+
+					</style>
+<link rel="icon" href="/wp-content/uploads/2020/04/cropped-WIN_20200324_09_06_53_Pro-2-32x32.jpg" sizes="32x32">
+<link rel="icon" href="/wp-content/uploads/2020/04/cropped-WIN_20200324_09_06_53_Pro-2-192x192.jpg" sizes="192x192">
+<link rel="apple-touch-icon" href="/wp-content/uploads/2020/04/cropped-WIN_20200324_09_06_53_Pro-2-180x180.jpg">
+<meta name="msapplication-TileImage" content="/wp-content/uploads/2020/04/cropped-WIN_20200324_09_06_53_Pro-2-270x270.jpg">
+</head>
+
+<body class="wp-singular post-template-default single single-post postid-881 single-format-standard wp-theme-minimalist-blogger-x header-image">
+		<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+	<header id="masthead" class="sheader site-header clearfix">
+		        <nav id="primary-site-navigation" class="primary-menu main-navigation clearfix">
+                    <a href="#" class="nav-pull smenu-hide toggle-mobile-menu menu-toggle" aria-expanded="false">
+                            <span class="logofont site-title">
+                    Oracle Analytics by Adrian Ward                </span>
+                        <span class="navigation-icon-nav">
+                <svg width="24" height="18" viewbox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.33301 1H22.6663" stroke="#2D2D2D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M1.33301 9H22.6663" stroke="#2D2D2D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M1.33301 17H22.6663" stroke="#2D2D2D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </span>
+        </a>
+            <div class="top-nav-wrapper">
+                <div class="content-wrap navigation-layout-large">
+                    <div class="header-content-container navigation-layout-large">
+                                                <div class="logo-container navigation-layout-large header-has-no-side-elements">
+                                                        <a class="logofont site-title" href="/" rel="home">Oracle Analytics by Adrian Ward</a>
+                                                            <p class="logodescription site-description">26 Years Experience and Done</p>
+                                                    </div>
+                                            </div>
+                            <div class="center-main-menu">
+                            <div class="menu-main-menu-container"><ul id="primary-menu" class="pmenu"><li id="menu-item-24162" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24162"><a href="/analytics-performance/">Analytics Performance</a></li>
+<li id="menu-item-22676" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22676"><a href="/my-profile/">My Profile</a></li>
+<li id="menu-item-22675" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22675"><a href="/publications/">Publications</a></li>
+<li id="menu-item-22674" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22674"><a href="/5-minutes-of-fame/">5 Minutes of Fame</a></li>
+<li id="menu-item-24522" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24522"><a href="/news-posts/">News Posts</a></li>
+<li id="menu-item-24526" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24526"><a href="/technical-posts/">Technical Posts</a></li>
+</ul></div>                                        </div>
+                </div>
+            </div>
+        </nav>
+		<div class="super-menu clearfix menu-offconvas-mobile-only">
+			<div class="super-menu-inner">
+				<div class="header-content-container">
+					<div class="mob-logo-wrap">
+																				
+								<a class="logofont site-title" href="/" rel="home">Oracle Analytics by Adrian Ward</a>
+																	<p class="logodescription site-description">26 Years Experience and Done</p>
+								
+													</div>
+
+
+											<a href="#" class="nav-pull toggle-mobile-menu menu-toggle" aria-expanded="false">
+							<span class="navigation-icon">
+								<svg width="24" height="18" viewbox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M1.33301 1H22.6663" stroke="#2D2D2D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+									<path d="M1.33301 9H22.6663" stroke="#2D2D2D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+									<path d="M1.33301 17H22.6663" stroke="#2D2D2D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+								</svg>
+							</span>
+						</a>
+									</div>
+			</div>
+		</div>
+	</header>
+
+	
+
+	<div class="content-wrap">
+
+							
+	</div>
+
+
+
+
+	
+<div id="content" class="site-content clearfix"> <div class="content-wrap">
+    <div id="primary" class="featured-content content-area fullwidth-area-blog">
+        <main id="main" class="site-main">
+
+        
+<article id="post-881" class="posts-entry fbox post-881 post type-post status-publish format-standard hentry category-obiee-11g category-uncategorized">
+
+	
+<header class="entry-header">
+	<h1 class="entry-title">Blog posts of the week</h1>			<div class="entry-meta">
+			<div class="blog-data-wrapper">
+				<div class="post-meta-inner-wrapper">
+					 Posted on					<span class="posted-on"><a href="/blog-posts-of-the-week/" rel="bookmark"><time class="entry-date published updated" datetime="2013-10-07T10:59:22+00:00">7 October 2013</time></a></span>											<span class="post-author-data">
+							By Adrian Ward																		</span>
+														</div>
+			</div>
+		</div><!-- .entry-meta -->
+	</header><!-- .entry-header -->
+
+<div class="entry-content">
+	<p><span style="text-decoration: underline;"><a href="http://www.addidici.com/wp-content/uploads/2013/09/index.jpg"><img decoding="async" class=" wp-image-791 alignleft" alt="index" src="http://www.addidici.com/wp-content/uploads/2013/09/index-300x100.jpg" width="180" height="60"></a></span></p>
+<p><span style="text-decoration: underline;">OBIEE News is out!</span></p>
+<p><a href="http://news.addidici.com/" target="_blank" rel="noopener noreferrer">OBIEE News is out! Edition of 7th October</a></p>
+<p><span style="text-decoration: underline;">Blogs</span><span style="text-decoration: underline;"><a href="http://www.addidici.com/wp-content/uploads/2013/09/rss.jpg"><img decoding="async" class=" wp-image-792 alignleft" alt="rss" src="http://www.addidici.com/wp-content/uploads/2013/09/rss.jpg" width="107" height="107"></a></span><span style="text-decoration: underline;"> of the week</span></p>
+<p>1. <a href="http://obieeexpress.blogspot.co.uk/2011/04/physical-layer-tips.html" target="_blank" rel="noopener noreferrer">Physical Layer Tips from OBIEE Express</a></p>
+<p>In this blog post, Kishore looks at the physical layer problems of:</p>
+<ul>
+<li>Circular Joins</li>
+<li>Nullable Flag</li>
+<li>Primary Keys</li>
+<li>Complex Joins</li>
+<li>Filtering</li>
+</ul>
+<p>2. <a href="http://implementoracle.blogspot.co.uk/2013/09/oracle-open-world-2013-wrap-up-oow13.html?spref=tw" target="_blank" rel="noopener noreferrer">Oracle Open World 2013 – Wrap up</a></p>
+<p>In this blog post, the highlights of Oracle Open World for Danny Byrant are shared. Read his detailed blog to find out more.</p>
+<p>3. <a href="http://www.oracle.com/technetwork/articles/bi/screen-config-obi11g-1844060.html" target="_blank" rel="noopener noreferrer">Configuring Oracle Business Intelligence 11g MDS XML Source Control Management with Git Version Control</a></p>
+<p>In this post, Christian Screen explains how this tutorial was developed so that anyone with a basic understanding of the Oracle Business Intelligence (OBI) development lifecycle can learn how to configure the Oracle Business Intelligence 11g (11.1.1.6) metadata repository for development using the new MDS XML source control management functionality. Read the full tutorial <a href="http://www.oracle.com/technetwork/articles/bi/screen-config-obi11g-1844060.html" target="_blank" rel="noopener noreferrer">here</a>.</p>
+<p>4. <a href="http://obiee911.blogspot.co.uk/2013/01/top-10-costly-mistakes-for-business.html" target="_blank" rel="noopener noreferrer">Top 10 Costly Mistakes for Business Intelligence / OBIEE Implementation Projects</a></p>
+<p>Arun Kumar discusses the Top 10 Costly Mistakes for Business Intelligence / OBIEE Implementation Projects of which two are ‘Not setting the expectations right with users and senior management’ and ‘Going for BI Apps and assuming all out of the box reports will be ready and used by business’. Read all ten mistakes in the post.</p>
+<p><span style="text-decoration: underline;">Other News</span></p>
+<p><a href="http://www.appsassociates.com/campaigns/obiee-11g-security.php" target="_blank" rel="noopener noreferrer">Best Practices for OBIEE 11g Security</a></p>
+<p>Learn about OBIEE 11g security in a step-by-step series as part of the TechTip forum. Simply register your details to access the video.</p>
+<p><a href="http://theheat.dk/oracle/ODTUG-Q207.pdf" target="_blank" rel="noopener noreferrer">Oracle Application Express—What’s it All About?</a></p>
+<p>He<img fetchpriority="high" decoding="async" class="alignleft" alt="" src="data:image/png;base64,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" width="336" height="151">re, Peter Lorenzen talks about what APEX is, discusses application development, reports, charts, MS Excel Integration, User Interface and so on.  Well worth a read – to both those new to APEX and those more familiar.</p>
+<p> </p>
+<p><a href="http://www.ukoug.org/membership-new/partner-area/partner-of-the-year-awards/winners-2013/" target="_blank" rel="noopener noreferrer">The 2013 Winners of the Partner of the Year Awards have been announced.</a></p>
+<p><span style="text-decoration: underline;"><strong>UKOUG Business Intelligence Partner of the Year</strong></span></p>
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td>Gold – <a href="http://www.ukoug.org/our-partners/partner-directory/rittman-mead-consulting/" target="_blank" rel="noopener noreferrer">Rittman Mead Consulting</a></td>
+</tr>
+<tr>
+<td>Silver –<a href="http://www.ukoug.org/our-partners/partner-directory/ibm/" target="_blank" rel="noopener noreferrer"> IBM</a></td>
+</tr>
+<tr>
+<td>Bronze – <a href="http://www.ukoug.org/our-partners/partner-directory/percipient-consulting/" target="_blank" rel="noopener noreferrer">Percipient Consulting</a></td>
+</tr>
+</tbody>
+</table>
+<p>Many Congratulations!</p>
+<p><span style="text-decoration: underline;">This week on </span><span style="text-decoration: underline;"><a href="http://www.addidici.com/wp-content/uploads/2013/05/linkedin-logo1.jpg"><img loading="lazy" decoding="async" class=" wp-image-571 alignleft" alt="linkedin logo" src="http://www.addidici.com/wp-content/uploads/2013/05/linkedin-logo1.jpg" width="134" height="135"></a></span><span style="text-decoration: underline;">LinkedIn</span></p>
+<p><a href="http://www.linkedin.com/profile/view?id=66630&amp;authType=name&amp;authToken=th4R&amp;ref=NUS&amp;goback=.gmr_43109.amf_43109_66630&amp;trk=NUS_UNIU_SHARE-prfl" target="_blank" rel="noopener noreferrer">Ian Bristow </a>shared <a href="https://blogs.oracle.com/proactivesupportEPM/entry/obiee_problems_with_chrome_update#!" target="_blank" rel="noopener noreferrer">OBIEE problems with Chrome (update 30)</a> and <a href="http://www.linkedin.com/groupItem?view=&amp;gid=43109&amp;type=member&amp;item=5792954084566777860&amp;qid=e1f159b9-84b4-459d-bc6e-ed7c5aee9b4e&amp;trk=groups_most_recent-0-b-ttl&amp;goback=.gmr_43109" target="_blank" rel="noopener noreferrer">SampleApp V309 is now available for public download from OTN</a></p>
+<p><a href="http://www.linkedin.com/profile/view?id=219872699&amp;authType=name&amp;authToken=p1a0&amp;ref=NUS&amp;goback=.gmr_43109.amf_43109_219872699&amp;trk=NUS_UNIU_SHARE-prfl" target="_blank" rel="noopener noreferrer">Uijal Das </a>shared <a href="http://researchinformation.me/2013/10/07/oracle-special-oracle-magazine/#!" target="_blank" rel="noopener noreferrer">Oracle Special: Oracle Magazine</a>. Click on the link and request your free subscription.</p>
+<p><a href="http://www.linkedin.com/profile/view?id=238830100&amp;goback=.gmr_43109.gde_43109_member_5793033053341233153" target="_blank" rel="noopener noreferrer">Monica Hasebi</a> shared a link to <a href="http://www.linkedin.com/groupItem?view=&amp;gid=43109&amp;type=member&amp;item=5793033053341233153&amp;qid=d0e18b30-c9b1-48cb-aae7-b842c6e38c47&amp;trk=groups_most_recent-0-b-ttl&amp;goback=.gmr_43109" target="_blank" rel="noopener noreferrer">Essbase Analytic Link Webinar Recording &amp; Presentation</a></p>
+<p><a href="http://www.linkedin.com/profile/view?id=644618&amp;authType=name&amp;authToken=6zPH&amp;goback=.gmr_43109.amf_43109_644618&amp;trk=NUS_DISC_Q-ncuc_cmtr" target="_blank" rel="noopener noreferrer">Philippe Lions</a> shared <a href="http://www.oracle.com/technetwork/middleware/bi-foundation/obiee-samples-167534.html#!" target="_blank" rel="noopener noreferrer">Oracle Business Intelligence Enterprise Edition Samples</a><br>
+<iframe loading="lazy" title="What's New in OBIEE SampleApp V309" width="640" height="480" src="https://www.youtube.com/embed/3luhSL-xcvI?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
+<p>Join the LinkedIn group <a href="http://www.linkedin.com/groups?gid=43109&amp;trk=my_groups-b-grp-v" target="_blank" rel="noopener noreferrer">here</a>.</p>
+<p><span style="text-decoration: underline;"><a href="http://www.addidici.com/wp-content/uploads/2013/06/twitter-logo.jpg"><img loading="lazy" decoding="async" class=" wp-image-646 alignleft" alt="twitter logo" src="http://www.addidici.com/wp-content/uploads/2013/06/twitter-logo.jpg" width="149" height="121"></a>This week on Twitter</span></p>
+<p><a href="https://twitter.com/cezarovidiu" target="_blank" rel="noopener noreferrer">Cezar Ovidiu</a> tweeted <a href="http://www.oracle.com/technetwork/middleware/bi-foundation/obiee-samples-167534.html" target="_blank" rel="noopener noreferrer">Oracle Business Intelligence Enterprise Edition Samples</a></p>
+<p><a href="https://twitter.com/OracleBlogs" target="_blank" rel="noopener noreferrer">Oracle Blogs</a> posted a link to ‘<a href="https://blogs.oracle.com/imc/entry/partner_webcast_oracle_soa_simplifying" target="_blank" rel="noopener noreferrer">Partner Webcast – Oracle SOA: Simplifying Cloud, Mobile, and On-premise Integration – 24 Oct 2013.</a>‘ and ‘<a href="https://blogs.oracle.com/fadevrel/entry/adf_how_to_12_deploying" target="_blank" rel="noopener noreferrer">ADF How-To #12: Deploying Customizations to Standalone WLS</a>.’</p>
+<p><a href="https://twitter.com/orana" target="_blank" rel="noopener noreferrer">OraNA.info</a> shared ‘<a href="https://blogs.oracle.com/epm/entry/practical_uses_of_business_scorecards?utm_source=dlvr.it&amp;utm_medium=twitter&amp;utm_campaign=Feed%3A+orana+%28OraNA%29" target="_blank" rel="noopener noreferrer">Practical Uses of Business Scorecards, from Company-Wide to Process Specific</a>.’</p>
+<p><a href="https://twitter.com/Addidici" target="_blank" rel="noopener noreferrer">Follow me</a> on twitter for daily OBIEE News and Links.</p>
+<p><span style="text-decoration: underline;"><a href="http://www.addidici.com/wp-content/uploads/2013/05/cropped-dreamstime_s_30492048.jpg"><img loading="lazy" decoding="async" class=" wp-image-806 alignleft" alt="cropped-dreamstime_s_30492048.jpg" src="http://www.addidici.com/wp-content/uploads/2013/05/cropped-dreamstime_s_30492048-300x183.jpg" width="77" height="47"></a></span></p>
+<p><span style="text-decoration: underline;">Oracle Racing News</span></p>
+<p>https://www.youtube.com/watch?feature=player_embedded&amp;v=QHdmviq1kyg</p>
+<p id="watch-headline-title">Replay: America’s Cup Final – Race 19</p>
+<p itemprop="headline name"><a href="http://www.telegraph.co.uk/sport/othersports/sailing/ben-ainslie/10350353/Sir-Ben-Ainslie-Im-not-so-stupid-as-to-think-I-did-it-alone.html" target="_blank" rel="noopener noreferrer">Sir Ben Ainslie: ‘I’m not so stupid as to think I did it alone’</a></p>
+<p><iframe loading="lazy" title="Defender Access: Celebration" width="640" height="360" src="https://www.youtube.com/embed/rqd2K-9b3ds?list=UU5tc6IkTnFb3QQ01AJVTpVg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
+<p itemprop="headline name">Champagne spray and hugs all around as ORACLE TEAM USA celebrated victory in the 34th America’s Cup.</p>
+<p itemprop="headline name">
+					</p><div class="category-and-tags">
+				<a href="/category/obiee-11g/" rel="category tag">Obiee 11g</a> <a href="/category/uncategorized/" rel="category tag">Uncategorized</a>							</div>
+			
+
+</div><!-- .entry-content -->
+</article><!-- #post-881 -->
+	<nav class="navigation post-navigation" aria-label="Posts">
+		<h2 class="screen-reader-text">Post navigation</h2>
+		<div class="nav-links"><div class="nav-previous"><a href="/blog-of-the-week-2/" rel="prev">Previous post</a></div><div class="nav-next"><a href="/blogs-of-the-week/" rel="next">Next post</a></div></div>
+	</nav>
+            </main><!-- #main -->
+        </div><!-- #primary -->
+                    </div>
+</div><!-- #content -->
+
+
+
+<footer id="colophon" class="site-footer clearfix">
+
+
+			<div class="content-wrap">
+			<div class="site-footer-widget-area">
+				<section id="block-4" class="widget widget_block widget_media_image">
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="256" src="/wp-content/uploads/2023/08/linked_associate_light_3840-%C3%97-2160-1024x256.png" alt="" class="wp-image-24108" srcset="/wp-content/uploads/2023/08/linked_associate_light_3840-×-2160-1024x256.png 1024w, /wp-content/uploads/2023/08/linked_associate_light_3840-×-2160-300x75.png 300w, /wp-content/uploads/2023/08/linked_associate_light_3840-×-2160-768x192.png 768w, /wp-content/uploads/2023/08/linked_associate_light_3840-×-2160-1536x384.png 1536w, /wp-content/uploads/2023/08/linked_associate_light_3840-×-2160-2048x512.png 2048w, /wp-content/uploads/2023/08/linked_associate_light_3840-×-2160-850x213.png 850w" sizes="auto, (max-width: 1024px) 100vw, 1024px"></figure>
+</section>			</div>
+		</div>
+
+	
+
+	<div class="site-info">
+					©2026 Oracle Analytics by Adrian Ward			<!-- Delete below lines to remove copyright from footer -->
+			<span class="footer-info-right">
+				 | WordPress Theme by <a href="https://superbthemes.com/" rel="nofollow noopener"> SuperbThemes</a>
+			</span>
+			<!-- Delete above lines to remove copyright from footer -->
+
+			</div><!-- .site-info -->
+
+	
+
+</footer><!-- #colophon -->
+
+
+<div id="smobile-menu" class="mobile-only"></div>
+<div id="mobile-menu-overlay"></div>
+
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/minimalist-blogger-x/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+    <script>
+        "use strict";
+        /(trident|msie)/i.test(navigator.userAgent) && document.getElementById && window.addEventListener && window.addEventListener("hashchange", function() {
+            var t, e = location.hash.substring(1);
+            /^[A-z0-9_-]+$/.test(e) && (t = document.getElementById(e)) && (/^(?:a|select|input|button|textarea)$/i.test(t.tagName) || (t.tabIndex = -1), t.focus())
+        }, !1);
+    </script>
+    <script id="minimalist-blogger-x-navigation-js" src="/wp-content/themes/minimalist-blogger-x/js/navigation.js?ver=20170823"></script>
+<script id="minimalist-blogger-x-skip-link-focus-fix-js" src="/wp-content/themes/minimalist-blogger-x/js/skip-link-focus-fix.js?ver=20170823"></script>
+<script id="minimalist-blogger-x-script-js" src="/wp-content/themes/minimalist-blogger-x/js/script.js?ver=20160720"></script>
+<script id="minimalist-blogger-x-accessibility-js" src="/wp-content/themes/minimalist-blogger-x/js/accessibility.js?ver=20160720"></script>
+<script id="wp-emoji-settings" type="application/json">
+{"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"/wp-includes/js/wp-emoji-release.min.js?ver=7.0"}}
+</script>
+<script type="module">
+/*! This file is auto-generated */
+const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(window._wpemojiSettings=a,"wpEmojiSettingsSupports"),s=["flag","emoji"];function i(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function c(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0);const a=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);return t.every((e,t)=>e===a[t])}function p(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var n=e.getImageData(16,16,1,1);for(let e=0;e<n.data.length;e++)if(0!==n.data[e])return!1;return!0}function u(e,t,n,a){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!a(e,"\ud83e\u1fac8")}return!1}function f(e,t,n,a){let r;const o=(r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):document.createElement("canvas")).getContext("2d",{willReadFrequently:!0}),s=(o.textBaseline="top",o.font="600 32px Arial",{});return e.forEach(e=>{s[e]=t(o,e,n,a)}),s}function r(e){var t=document.createElement("script");t.src=e,t.defer=!0,document.head.appendChild(t)}a.supports={everything:!0,everythingExceptFlag:!0},new Promise(t=>{let n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),c.toString(),p.toString()].join(",")+"));",a=new Blob([e],{type:"text/javascript"});const r=new Worker(URL.createObjectURL(a),{name:"wpTestEmojiSupports"});return void(r.onmessage=e=>{i(n=e.data),r.terminate(),t(n)})}catch(e){}i(n=f(s,u,c,p))}t(n)}).then(e=>{for(const n in e)a.supports[n]=e[n],a.supports.everything=a.supports.everything&&a.supports[n],"flag"!==n&&(a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&a.supports[n]);var t;a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&!a.supports.flag,a.supports.everything||((t=a.source||{}).concatemoji?r(t.concatemoji):t.wpemoji&&t.twemoji&&(r(t.twemoji),r(t.wpemoji)))});
+//# sourceURL=/wp-includes/js/wp-emoji-loader.min.js
+</script>
+</body>
+
+</html>

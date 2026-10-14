@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head><meta charset="UTF-8">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<title>OBIEE 11g Integration With Active Directory – Oracle Analytics by Adrian Ward</title>
+<meta name="robots" content="max-image-preview:large">
+<link rel="alternate" type="application/rss+xml" title="Oracle Analytics by Adrian Ward » Feed" href="/feed/">
+<link rel="alternate" type="application/rss+xml" title="Oracle Analytics by Adrian Ward » Comments Feed" href="/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Oracle Analytics by Adrian Ward » OBIEE 11g Integration With Active Directory Comments Feed" href="/obiee-11g-integration-with-active-directory/feed/">
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=%2Fobiee-11g-integration-with-active-directory%2F">
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=%2Fobiee-11g-integration-with-active-directory%2F&amp;format=xml">
+<style id="wp-img-auto-sizes-contain-inline-css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<link rel="stylesheet" id="minimalist-blogger-x-simple-css" href="/wp-content/themes/minimalist-blogger-x/css/simple-theme-mode.css?ver=105.1" media="all">
+<style id="wp-emoji-styles-inline-css">
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+/*# sourceURL=wp-emoji-styles-inline-css */
+</style>
+<style id="wp-block-library-inline-css">
+:root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,160.5;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}:root .has-text-align-center{text-align:center}:root .has-text-align-left{text-align:left}:root .has-text-align-right{text-align:right}.has-fit-text{white-space:nowrap!important}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{word-wrap:normal!important;border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style*=border-color]){border-style:solid}html :where([style*=border-top-color]){border-top-style:solid}html :where([style*=border-right-color]){border-right-style:solid}html :where([style*=border-bottom-color]){border-bottom-style:solid}html :where([style*=border-left-color]){border-left-style:solid}html :where([style*=border-width]){border-style:solid}html :where([style*=border-top-width]){border-top-style:solid}html :where([style*=border-right-width]){border-right-style:solid}html :where([style*=border-bottom-width]){border-bottom-style:solid}html :where([style*=border-left-width]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
+
+/*# sourceURL=/wp-includes/css/dist/block-library/common.min.css */
+</style>
+<style id="wp-block-image-inline-css">
+.wp-block-image>a,.wp-block-image>figure>a{display:inline-block}.wp-block-image img{box-sizing:border-box;height:auto;max-width:100%;vertical-align:bottom}@media not (prefers-reduced-motion){.wp-block-image img.hide{visibility:hidden}.wp-block-image img.show{animation:show-content-image .4s}}.wp-block-image[style*=border-radius] img,.wp-block-image[style*=border-radius]>a{border-radius:inherit}.wp-block-image.has-custom-border img{box-sizing:border-box}.wp-block-image.aligncenter{text-align:center}.wp-block-image.alignfull>a,.wp-block-image.alignwide>a{width:100%}.wp-block-image.alignfull img,.wp-block-image.alignwide img{height:auto;width:100%}.wp-block-image .aligncenter,.wp-block-image .alignleft,.wp-block-image .alignright,.wp-block-image.aligncenter,.wp-block-image.alignleft,.wp-block-image.alignright{display:table}.wp-block-image .aligncenter>figcaption,.wp-block-image .alignleft>figcaption,.wp-block-image .alignright>figcaption,.wp-block-image.aligncenter>figcaption,.wp-block-image.alignleft>figcaption,.wp-block-image.alignright>figcaption{caption-side:bottom;display:table-caption}.wp-block-image .alignleft{float:left;margin:.5em 1em .5em 0}.wp-block-image .alignright{float:right;margin:.5em 0 .5em 1em}.wp-block-image .aligncenter{margin-left:auto;margin-right:auto}.wp-block-image :where(figcaption){margin-bottom:1em;margin-top:.5em}.wp-block-image.is-style-circle-mask img{border-radius:9999px}@supports ((-webkit-mask-image:none) or (mask-image:none)) or (-webkit-mask-image:none){.wp-block-image.is-style-circle-mask img{border-radius:0;-webkit-mask-image:url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"/></svg>');mask-image:url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"/></svg>');mask-mode:alpha;-webkit-mask-position:center;mask-position:center;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-size:contain;mask-size:contain}}:root :where(.wp-block-image.is-style-rounded img,.wp-block-image .is-style-rounded img){border-radius:9999px}.wp-block-image figure{margin:0}.wp-lightbox-container{display:flex;flex-direction:column;position:relative}.wp-lightbox-container img{cursor:zoom-in}.wp-lightbox-container img:hover+button{opacity:1}.wp-lightbox-container button{align-items:center;backdrop-filter:blur(16px) saturate(180%);background-color:#5a5a5a40;border:none;border-radius:4px;cursor:zoom-in;display:flex;height:20px;justify-content:center;opacity:0;padding:0;position:absolute;right:16px;text-align:center;top:16px;width:20px;z-index:100}@media not (prefers-reduced-motion){.wp-lightbox-container button{transition:opacity .2s ease}}.wp-lightbox-container button:focus-visible{outline:3px auto #5a5a5a40;outline:3px auto -webkit-focus-ring-color;outline-offset:3px}.wp-lightbox-container button:hover{cursor:pointer;opacity:1}.wp-lightbox-container button:focus{opacity:1}.wp-lightbox-container button:focus,.wp-lightbox-container button:hover,.wp-lightbox-container button:not(:hover):not(:active):not(.has-background){background-color:#5a5a5a40;border:none}.wp-lightbox-overlay{box-sizing:border-box;cursor:zoom-out;height:100vh;left:0;overflow:hidden;position:fixed;top:0;visibility:hidden;width:100%;z-index:100000}.wp-lightbox-overlay .wp-lightbox-close-button{align-items:center;cursor:pointer;display:flex;font-family:inherit;gap:8px;justify-content:center;line-height:1;min-height:40px;min-width:40px;padding:0 4px;position:absolute;right:calc(env(safe-area-inset-right) + 16px);top:calc(env(safe-area-inset-top) + 16px);z-index:5000000}.wp-lightbox-overlay .wp-lightbox-close-button:focus,.wp-lightbox-overlay .wp-lightbox-close-button:hover,.wp-lightbox-overlay .wp-lightbox-close-button:not(:hover):not(:active):not(.has-background){background:none;border:none}.wp-lightbox-overlay .wp-lightbox-close-button:has(.wp-lightbox-close-text:not([hidden])) .wp-lightbox-close-icon svg{height:1em;width:1em}.wp-lightbox-overlay .wp-lightbox-close-icon svg{display:block}.wp-lightbox-overlay .wp-lightbox-navigation-button-next,.wp-lightbox-overlay .wp-lightbox-navigation-button-prev{align-items:center;bottom:16px;cursor:pointer;display:flex;font-family:inherit;gap:4px;justify-content:center;line-height:1;min-height:40px;min-width:40px;padding:0 8px;position:absolute;z-index:2000002}.wp-lightbox-overlay .wp-lightbox-navigation-button-next[hidden],.wp-lightbox-overlay .wp-lightbox-navigation-button-prev[hidden]{display:none}@media (min-width:960px){.wp-lightbox-overlay .wp-lightbox-navigation-button-next,.wp-lightbox-overlay .wp-lightbox-navigation-button-prev{bottom:50%;transform:translateY(-50%)}}.wp-lightbox-overlay .wp-lightbox-navigation-button-next:focus,.wp-lightbox-overlay .wp-lightbox-navigation-button-next:hover,.wp-lightbox-overlay .wp-lightbox-navigation-button-next:not(:hover):not(:active):not(.has-background),.wp-lightbox-overlay .wp-lightbox-navigation-button-prev:focus,.wp-lightbox-overlay .wp-lightbox-navigation-button-prev:hover,.wp-lightbox-overlay .wp-lightbox-navigation-button-prev:not(:hover):not(:active):not(.has-background){background:none;border:none;padding:0 8px}.wp-lightbox-overlay .wp-lightbox-navigation-button-next:has(.wp-lightbox-navigation-text:not([hidden])) .wp-lightbox-navigation-icon svg,.wp-lightbox-overlay .wp-lightbox-navigation-button-prev:has(.wp-lightbox-navigation-text:not([hidden])) .wp-lightbox-navigation-icon svg{display:block;height:1.5em;width:1.5em}.wp-lightbox-overlay .wp-lightbox-navigation-button-prev{left:calc(env(safe-area-inset-left) + 16px)}.wp-lightbox-overlay .wp-lightbox-navigation-button-next{right:calc(env(safe-area-inset-right) + 16px)}.wp-lightbox-overlay .wp-lightbox-navigation-icon svg{vertical-align:middle}.wp-lightbox-overlay .lightbox-image-container{height:var(--wp--lightbox-container-height);left:50%;overflow:hidden;position:absolute;top:50%;transform:translate(-50%,-50%);transform-origin:top left;width:var(--wp--lightbox-container-width);z-index:2000001}.wp-lightbox-overlay .wp-block-image{align-items:center;box-sizing:border-box;display:flex;height:100%;justify-content:center;margin:0;position:relative;transform-origin:0 0;width:100%;z-index:3000000}.wp-lightbox-overlay .wp-block-image img{height:var(--wp--lightbox-image-height);min-height:var(--wp--lightbox-image-height);min-width:var(--wp--lightbox-image-width);width:var(--wp--lightbox-image-width)}.wp-lightbox-overlay .wp-block-image figcaption{display:none}.wp-lightbox-overlay button{background:none;border:none}.wp-lightbox-overlay .scrim{background-color:#fff;height:100%;opacity:.9;position:absolute;width:100%;z-index:2000000}.wp-lightbox-overlay.active{visibility:visible}@media not (prefers-reduced-motion){.wp-lightbox-overlay.active{animation:turn-on-visibility .25s both}.wp-lightbox-overlay.active img{animation:turn-on-visibility .35s both}.wp-lightbox-overlay.show-closing-animation:not(.active){animation:turn-off-visibility .35s both}.wp-lightbox-overlay.show-closing-animation:not(.active) img{animation:turn-off-visibility .25s both}.wp-lightbox-overlay.zoom.active{animation:none;opacity:1;visibility:visible}.wp-lightbox-overlay.zoom.active .lightbox-image-container{animation:lightbox-zoom-in .4s}.wp-lightbox-overlay.zoom.active .lightbox-image-container img{animation:none}.wp-lightbox-overlay.zoom.active .scrim{animation:turn-on-visibility .4s forwards}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active){animation:none}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active) .lightbox-image-container{animation:lightbox-zoom-out .4s}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active) .lightbox-image-container img{animation:none}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active) .scrim{animation:turn-off-visibility .4s forwards}}@keyframes show-content-image{0%{visibility:hidden}99%{visibility:hidden}to{visibility:visible}}@keyframes turn-on-visibility{0%{opacity:0}to{opacity:1}}@keyframes turn-off-visibility{0%{opacity:1;visibility:visible}99%{opacity:0;visibility:visible}to{opacity:0;visibility:hidden}}@keyframes lightbox-zoom-in{0%{transform:translate(calc((-100vw + var(--wp--lightbox-scrollbar-width))/2 + var(--wp--lightbox-initial-left-position)),calc(-50vh + var(--wp--lightbox-initial-top-position))) scale(var(--wp--lightbox-scale))}to{transform:translate(-50%,-50%) scale(1)}}@keyframes lightbox-zoom-out{0%{transform:translate(-50%,-50%) scale(1);visibility:visible}99%{visibility:visible}to{transform:translate(calc((-100vw + var(--wp--lightbox-scrollbar-width))/2 + var(--wp--lightbox-initial-left-position)),calc(-50vh + var(--wp--lightbox-initial-top-position))) scale(var(--wp--lightbox-scale));visibility:hidden}}
+/*# sourceURL=/wp-includes/blocks/image/style.min.css */
+</style>
+
+<style id="classic-theme-styles-inline-css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+</style>
+
+<style id="global-styles-inline-css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}:where(body) { margin: 0; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+
+<link rel="stylesheet" id="minimalist-blogger-x-font-awesome-css" href="/wp-content/themes/minimalist-blogger-x/css/font-awesome.min.css?ver=7.0" media="all">
+<link rel="stylesheet" id="minimalist-blogger-x-style-css" href="/wp-content/themes/minimalist-blogger-x/style.css?ver=7.0" media="all">
+<link rel="stylesheet" id="minimalist-blogger-x-fonts-css" href="/wp-content/fonts/403a7bec291aa1b6e6875e4d35f2e57b.css?ver=1.0" media="all">
+<script id="jquery-core-js" src="/wp-includes/js/jquery/jquery.min.js?ver=3.7.1"></script>
+<script id="jquery-migrate-js" src="/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1"></script>
+<link rel="https://api.w.org/" href="/wp-json/"><link rel="alternate" title="JSON" type="application/json" href="/wp-json/wp/v2/posts/22699"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 7.0">
+<link rel="canonical" href="/obiee-11g-integration-with-active-directory/">
+<link rel="shortlink" href="/?p=22699">
+		<style type="text/css">
+			
+				/**  */
+				.logo-container.navigation-layout-large.header-has-no-side-elements {
+					max-width: 100% !important;
+				}
+
+				.content-wrap.navigation-layout-large {
+					width: 1480px;
+					padding: 0;
+				}
+
+				.header-content-container.navigation-layout-large {
+					padding: 25px 0 20px;
+				}
+
+				.header-content-author-container,
+				.header-content-some-container {
+					display: flex;
+					align-items: center;
+					min-width: 300px;
+					max-width: 300px;
+				}
+
+				.header-content-some-container {
+					justify-content: right;
+				}
+
+				.header-content-some-container a {
+					text-align: center;
+				}
+
+				.logo-container.navigation-layout-large {
+					text-align: center;
+					width: 100%;
+					max-width: calc(100% - 600px);
+					padding: 0 10px;
+				}
+
+				.header-author-container-img-wrapper {
+					min-width: 60px;
+					min-height: 60px;
+					max-width: 60px;
+					max-height: 60px;
+					margin-right: 10px;
+					border-radius: 50%;
+					border-style: solid;
+					border-width: 2px;
+					border-color: var(--minimalist-blogger-x-primary);
+					overflow: hidden;
+					background-size: contain;
+					background-repeat: no-repeat;
+					background-position: center;
+				}
+
+				.header-author-container-text-wrapper .header-author-name {
+					display: block;
+					font-size: var(--font-primary-medium);
+					font-family: var(--font-primary);
+					font-weight: var(--font-primary-bold);
+					color: var(--minimalist-blogger-x-foreground);
+				}
+
+				.header-author-container-text-wrapper .header-author-tagline {
+					margin: 0;
+					font-family: var(--font-primary);
+					font-size: var(--font-primary-small);
+					display: block;
+					color: var(--minimalist-blogger-x-foreground);
+				}
+
+				.logo-container a.custom-logo-link {
+					margin-top: 0px;
+				}
+
+				.navigation-layout-large .site-title {
+					font-weight: var(--font-secondary-bold);
+					font-size: var(--font-primary-xxl);
+					margin: 0 0 5px 0;
+				}
+
+				p.logodescription {
+					margin-top: 0;
+				}
+
+				.header-content-some-container a {
+					padding: 15px 25px;
+					display: inline-block;
+				}
+
+				.header-content-some-container a:hover {
+					background-color: var(--minimalist-blogger-x-primary-dark);
+				}
+
+				.navigation-layout-large .center-main-menu {
+					max-width: 100%;
+				}
+
+				.navigation-layout-large .center-main-menu .pmenu {
+					text-align: center;
+					float: none;
+				}
+
+				.navigation-layout-large .center-main-menu .wc-nav-content {
+					justify-content: center;
+				}
+
+
+				.custom-logo-link img {
+					width: auto;
+					max-height: var(--minimalist-blogger-x-logo-height);
+				}
+			
+							
+				.all-blog-articles {
+					display: block;
+				}
+				.all-blog-articles .featured-img-box {
+					padding:30px 30px 0px 30px;
+				}
+				.all-blog-articles .post-meta-inner-wrapper {
+					margin-top: 30px;
+					display: inline-block;
+					background: var(--minimalist-blogger-x-background);
+					padding: 0px 19px;
+				}
+				.all-blog-articles .blog-data-wrapper:after {
+					content: ' ';
+					background: var(--minimalist-blogger-x-foreground);
+					width: 100%;
+					height: 1px;
+					display: block;
+					margin: -12px auto 0 auto;
+					max-width: 75%;
+				}
+				.all-blog-articles .no-featured-img-box .blogpost-is-sticky-icon, 
+				body:not(.woocommerce-page):not(.elementor-page) .all-blog-articles .blogpost-is-sticky-icon:not(.blogpost-is-sticky-icon-has-featured-image) {
+					width: 100%;
+					display: inline-block;
+					margin-left: 0px;
+					text-align: left;
+					padding-left: 15px;
+				}
+				.all-blog-articles .blogposts-list,
+				.add-blog-to-sidebar .all-blog-articles .blogposts-list {
+					width: 100%;
+					max-width: 100%;
+					flex: 100%;
+					text-align:center;
+				}
+				.all-blog-articles .post-meta-inner-wrapper {
+					margin-top:20px;
+				}
+				.all-blog-articles .blogposts-list .entry-content {
+					text-align:left;
+					margin-top:20px;
+				}
+				.all-blog-articles article h2,
+				.all-blog-articles .blogposts-list .entry-meta, .add-blog-to-sidebar .all-blog-articles .blogposts-list .entry-header .entry-meta{
+					text-align:center;
+				}
+				.all-blog-articles .blog-data-wrapper {
+					-webkit-box-pack:center;
+					-ms-flex-pack:center;
+					justify-content:center;
+				}
+
+				.all-blog-articles article h2.entry-title {
+					font-size: var(--font-secondary-xl);
+				}
+
+				@media (max-width: 1100px) {
+					.all-blog-articles article h2.entry-title {
+						font-size: var(--font-secondary-xl);
+					}
+				}
+
+				@media (max-width: 700px) {
+					.all-blog-articles article h2.entry-title {
+						font-size: var(--font-primary-large);
+					}
+					.all-blog-articles .featured-img-box {
+						padding:20px 20px 0px 20px;
+					}
+					.post-meta-inner-wrapper,
+					.post-meta-inner-wrapper * {
+						margin-top:15px;
+						font-size: var(--font-primary-normal);
+					}
+					.all-blog-articles .blog-data-wrapper:after {
+						max-width:100%;
+					}
+					.all-blog-articles .post-meta-inner-wrapper {
+						padding: 0px 10px;
+					}
+				}
+
+				.blogposts-list .featured-thumbnail {
+				height: 220px;
+				background-size: cover;
+				background-position: center;
+			}
+
+			.related-posts-posts .blogposts-list .featured-thumbnail {
+				height: 220px;
+			}
+
+			.all-blog-articles .featured-img-category {
+				display: none;
+			}
+
+		
+		/** COLOR SCHEME & LAYOUT VARIABLES **/
+		:root {
+			--minimalist-blogger-x-foreground: #000000;--minimalist-blogger-x-button-text-color: #ffffff;--minimalist-blogger-x-background: #ffffff;--minimalist-blogger-x-background-elements: #fafafa;--minimalist-blogger-x-border-mode-elements: #000000;--minimalist-blogger-x-primary: #000000;--minimalist-blogger-x-primary-dark: #1d1d1d;--minimalist-blogger-x-secondary: #000000;--minimalist-blogger-x-secondary-dark: #000000;--minimalist-blogger-x-light-2: #efefef;--minimalist-blogger-x-dark-1: #717171;--minimalist-blogger-x-input-background-color: #ffffff;--minimalist-blogger-x-select-color: #efefef;--minimalist-blogger-x-logo-height: 65px;--minimalist-blogger-x-element-border-radius: 2px;--minimalist-blogger-x-button-border-radius: 3px;		}
+
+		/**  **/
+	</style>
+
+			<style type="text/css">
+			.site-title a,
+			.site-description,
+			.logofont,
+			.site-title,
+			.logodescription {
+				color: #000000;
+			}
+
+			.site-title a,
+			.site-title,
+			.site-description,
+			.logodescription {
+				color: #000000;
+			}
+
+					</style>
+<link rel="icon" href="/wp-content/uploads/2020/04/cropped-WIN_20200324_09_06_53_Pro-2-32x32.jpg" sizes="32x32">
+<link rel="icon" href="/wp-content/uploads/2020/04/cropped-WIN_20200324_09_06_53_Pro-2-192x192.jpg" sizes="192x192">
+<link rel="apple-touch-icon" href="/wp-content/uploads/2020/04/cropped-WIN_20200324_09_06_53_Pro-2-180x180.jpg">
+<meta name="msapplication-TileImage" content="/wp-content/uploads/2020/04/cropped-WIN_20200324_09_06_53_Pro-2-270x270.jpg">
+</head>
+
+<body class="wp-singular post-template-default single single-post postid-22699 single-format-standard wp-theme-minimalist-blogger-x header-image">
+		<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+	<header id="masthead" class="sheader site-header clearfix">
+		        <nav id="primary-site-navigation" class="primary-menu main-navigation clearfix">
+                    <a href="#" class="nav-pull smenu-hide toggle-mobile-menu menu-toggle" aria-expanded="false">
+                            <span class="logofont site-title">
+                    Oracle Analytics by Adrian Ward                </span>
+                        <span class="navigation-icon-nav">
+                <svg width="24" height="18" viewbox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.33301 1H22.6663" stroke="#2D2D2D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M1.33301 9H22.6663" stroke="#2D2D2D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M1.33301 17H22.6663" stroke="#2D2D2D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </span>
+        </a>
+            <div class="top-nav-wrapper">
+                <div class="content-wrap navigation-layout-large">
+                    <div class="header-content-container navigation-layout-large">
+                                                <div class="logo-container navigation-layout-large header-has-no-side-elements">
+                                                        <a class="logofont site-title" href="/" rel="home">Oracle Analytics by Adrian Ward</a>
+                                                            <p class="logodescription site-description">26 Years Experience and Done</p>
+                                                    </div>
+                                            </div>
+                            <div class="center-main-menu">
+                            <div class="menu-main-menu-container"><ul id="primary-menu" class="pmenu"><li id="menu-item-24162" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24162"><a href="/analytics-performance/">Analytics Performance</a></li>
+<li id="menu-item-22676" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22676"><a href="/my-profile/">My Profile</a></li>
+<li id="menu-item-22675" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22675"><a href="/publications/">Publications</a></li>
+<li id="menu-item-22674" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22674"><a href="/5-minutes-of-fame/">5 Minutes of Fame</a></li>
+<li id="menu-item-24522" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24522"><a href="/news-posts/">News Posts</a></li>
+<li id="menu-item-24526" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24526"><a href="/technical-posts/">Technical Posts</a></li>
+</ul></div>                                        </div>
+                </div>
+            </div>
+        </nav>
+		<div class="super-menu clearfix menu-offconvas-mobile-only">
+			<div class="super-menu-inner">
+				<div class="header-content-container">
+					<div class="mob-logo-wrap">
+																				
+								<a class="logofont site-title" href="/" rel="home">Oracle Analytics by Adrian Ward</a>
+																	<p class="logodescription site-description">26 Years Experience and Done</p>
+								
+													</div>
+
+
+											<a href="#" class="nav-pull toggle-mobile-menu menu-toggle" aria-expanded="false">
+							<span class="navigation-icon">
+								<svg width="24" height="18" viewbox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M1.33301 1H22.6663" stroke="#2D2D2D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+									<path d="M1.33301 9H22.6663" stroke="#2D2D2D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+									<path d="M1.33301 17H22.6663" stroke="#2D2D2D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+								</svg>
+							</span>
+						</a>
+									</div>
+			</div>
+		</div>
+	</header>
+
+	
+
+	<div class="content-wrap">
+
+							
+	</div>
+
+
+
+
+	
+<div id="content" class="site-content clearfix"> <div class="content-wrap">
+    <div id="primary" class="featured-content content-area fullwidth-area-blog">
+        <main id="main" class="site-main">
+
+        
+<article id="post-22699" class="posts-entry fbox post-22699 post type-post status-publish format-standard hentry category-installation category-obiee-11g category-uncategorized">
+
+	
+<header class="entry-header">
+	<h1 class="entry-title">OBIEE 11g Integration With Active Directory</h1>			<div class="entry-meta">
+			<div class="blog-data-wrapper">
+				<div class="post-meta-inner-wrapper">
+					 Posted on					<span class="posted-on"><a href="/obiee-11g-integration-with-active-directory/" rel="bookmark"><time class="entry-date published updated" datetime="2011-03-15T22:56:18+00:00">15 March 2011</time></a></span>											<span class="post-author-data">
+							By Adrian Ward																		</span>
+														</div>
+			</div>
+		</div><!-- .entry-meta -->
+	</header><!-- .entry-header -->
+
+<div class="entry-content">
+	<p>Having just installed 11g in a Windows 2008 I thought I would share the experience.</p>
+<p>It was actually fairly simple, but there were a couple of gotchas.</p>
+<p>Thankfully Oracle produced a white paper on this in December last year, which I will show extracts of below:</p>
+<p style="padding-left: 60px;"><strong> </strong> </p>
+<h2 style="padding-left: 60px;">Introduction</h2>
+<p style="padding-left: 60px;">The paper examines how to configure Oracle Business Intelligence Enterprise Edition (Oracle BI EE) 11.1.1.3.0 to use Windows Server Active Directory (AD) as an LDAP Authentication source and how to use Windows Native Authentication (WNA) in an SSO environment.</p>
+<p style="padding-left: 60px;">The aim is to describe the configuration and setup required so that users may log on to their Windows PCs and access Oracle BI EE via a standard web browser with no further authentication required on their part – Windows Native Authentication and Oracle Weblogic will be doing the hard work to authenticate users to Oracle BI EE using their standard network logins without further troubling authorised users of the system.</p>
+<p style="padding-left: 60px;">There are several steps to be performed in Active Directory itself, in the Weblogic Server hosting Oracle BI EE, in the Oracle BI EE web app and finally on the client machine(s) from which you wish users to access Oracle BI EE using Windows Native Authentication SSO.</p>
+<p style="padding-left: 60px;">The steps in the document have been tested with Oracle BI EE version 11.1.1.3.0 and Active Directory 2008 (Windows Server 2008).</p>
+<p style="padding-left: 60px;"><strong>Stage 1: Using Active Directory as a User store</strong></p>
+<p style="padding-left: 60px;">Before we can think about having clients authenticate using Single Sign On from machines in the AD domain, first we must configure Oracle BI EE to recognise the AD domain as a valid user store to authenticate Oracle BI EE users against. This is a standalone operation in its own right – once we have completed this section, XYZ Corp users will be able to log in to Oracle BI EE using the same credentials as they use to log in to the Windows domain.</p>
+<p style="padding-left: 60px;">NB this also requires Group information to be stored in Active Directory – i.e. once authenticated in this way, the system will expect users to be organised in AD groups. So users must be assigned to groups in Active Directory, rather than assigning Group/Role information in INIT blocks, as was the case in Oracle BI EE 10g. AD groups can then be assigned to Application Roles in Enterprise Manager to provide access to functions of the system.</p>
+<h3 style="padding-left: 60px;">What you need to know</h3>
+<p style="padding-left: 60px;">To complete this stage, we need the following pieces of information:</p>
+<p style="padding-left: 60px;"><strong>Active Directory Server name/port</strong>: we need the name of the AD server and the port on which it’s listening for LDAP requests (defaults to 389). So in our example scenario this is <strong>addc.xyzcorp.com:389</strong></p>
+<p style="padding-left: 60px;"><strong>Base DN</strong>: the base LDAP path from which all searches start for users and groups. In our example scenario, this is: <code><strong>CN=Users,DC=xyzcorp,DC=com</strong></code><strong> </strong></p>
+<p style="padding-left: 60px;">for the Users Base DN and</p>
+<p style="padding-left: 60px;"><code><strong>CN=Builtin,DC=xyzcorp,DC=com</strong></code></p>
+<p style="padding-left: 60px;">for the Groups Base DN.</p>
+<p style="padding-left: 60px;"><strong>GUID attribute</strong>: attribute in LDAP used to represent the GUID of users and groups (defaults to objectguid for Active Directory)</p>
+<p style="padding-left: 60px;"><strong>DN/Password for LDAP Principal</strong>: the LDAP DN for the user we will connect to Active Directory as when retrieving information about LDAP users. In our example scenario, this is: <strong>CN=jsmith</strong>,<strong>CN=Users,DC=xyzcorp,DC=com</strong></p>
+<p style="padding-left: 60px;">We’ll also need the password for the user, obviously. NB the user need not be an administrative account, but it does need to have sufficient privileges to be able to make arbitrary queries on the LDAP tree.</p>
+<h3 style="padding-left: 60px;">Configuring Active Directory Authenticator in Weblogic</h3>
+<p style="padding-left: 60px;">Log on to the Weblogic Admin console at <a href="http://biee.xyzcorp.com:7001/console">http://bieesvr1.xyz2.com:7001/console</a></p>
+<p style="padding-left: 60px;">On the left hand side of the screen is a Domain Structure menu. Select “Security Realms” then on the main page, click on the link for the domain security realm (default “myrealm”), then the Providers tab in the main screen, followed by the Authentication subtab.</p>
+<p style="padding-left: 60px;">Click the “Lock and Edit” button in the top left of the WLS Admin console so we can create a new authentication provider, then click the New button at the bottom of the table of current Authentication Providers in the main screen.</p>
+<p style="padding-left: 60px;"> </p>
+<p style="padding-left: 30px;"> <a href="http://www.majendi.com/blog/wp-content/uploads/2011/03/ad11.png"><img fetchpriority="high" decoding="async" class="alignleft size-full wp-image-14" title="Admn Console" src="http://www.majendi.com/blog/wp-content/uploads/2011/03/ad11.png" alt="" width="924" height="570"></a></p>
+<p style="padding-left: 30px;">  </p>
+<p style="padding-left: 30px;">In the Create New Authenticator screen, type in a suitable name (ADAuthenticator in the example below) and select the type as ActiveDirectoryAuthenticator, then click OK.</p>
+<p><a href="http://www.majendi.com/blog/wp-content/uploads/2011/03/ad2.png"><img decoding="async" class="alignleft size-full wp-image-17" title="Provider" src="http://www.majendi.com/blog/wp-content/uploads/2011/03/ad2.png" alt="" width="625" height="353"></a></p>
+<p style="padding-left: 60px;">You’ll now be taken back to table of authentication providers, with your new provider at the bottom and the DefaultAuthenticator at the top. Click on the link to DefaultAuthenticator to edit its properties.</p>
+<p style="padding-left: 30px;"> <a href="http://www.majendi.com/blog/wp-content/uploads/2011/03/ad3.png"><img decoding="async" class="alignleft size-full wp-image-18" title="Reorder Providers" src="http://www.majendi.com/blog/wp-content/uploads/2011/03/ad3.png" alt="" width="605" height="288"></a></p>
+<p> </p>
+<p style="padding-left: 60px;">In the Common Authentication Provider Settings screen, change the Control Flag drop-down from REQUIRED to SUFFICIENT and click on the Save button. For further information on the implications of these settings, consult the Weblogic Server documentation on “Configuring Authentication Providers” at <a href="http://download.oracle.com/docs/cd/E14571_01/web.1111/e13707/atn.htm#i1204568">http://download.oracle.com/docs/cd/E14571_01/web.1111/e13707/atn.htm#i1204568</a> which contains a detailed explanation of these settings </p>
+<p style="padding-left: 60px;">Go back to the table of authentication providers and click on the link to your new provider (ADAuthenticator in the example) to edit its properties. </p>
+<p style="padding-left: 60px;">In the Common Authentication Provider Settings screen, change the Control Flag drop-down from OPTIONAL to SUFFICIENT and click on the Save button</p>
+<p style="padding-left: 120px;"> <a href="http://www.majendi.com/blog/wp-content/uploads/2011/03/ad4.png"><img loading="lazy" decoding="async" class="alignleft size-full wp-image-22" title="ad4" src="http://www.majendi.com/blog/wp-content/uploads/2011/03/ad4.png" alt="" width="1127" height="278"></a> </p>
+<p style="padding-left: 30px;">Next select the Provider Specific tab to bring up the options which apply specifically to connecting to an Active Directory LDAP authentication store. This is where we need specific information about the AD store we’re trying to connect to.</p>
+<table border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="130" valign="top">Host</td>
+<td width="350" valign="top">Name of the AD server addc.xyzcorp.com</td>
+<td width="220" valign="top"> </td>
+</tr>
+<tr>
+<td width="130" valign="top">Port</td>
+<td width="350" valign="top">Port the AD server is listening for LDAP requests on</td>
+<td width="220" valign="top">389</td>
+</tr>
+<tr>
+<td width="130" valign="top">Principal</td>
+<td width="350" valign="top">the LDAP DN for the user we will connect to Active Directory as when retrieving information about LDAP users</td>
+<td width="220" valign="top">CN=jsmith,CN=Users,DC=xyzcorp,DC=com</td>
+</tr>
+<tr>
+<td width="130" valign="top">Credential/Confirm credential</td>
+<td width="350" valign="top">password of the principal specified in the stage above</td>
+<td width="220" valign="top">welcome1</td>
+</tr>
+<tr>
+<td width="130" valign="top">User Base DN</td>
+<td width="350" valign="top">LDAP query used to find users in AD</td>
+<td width="220" valign="top">CN=Users,DC=xyzcorp,DC=com</td>
+</tr>
+<tr>
+<td width="130" valign="top">User Name Attribute</td>
+<td width="350" valign="top">Attribute used to specify user name in AD – defaults to cn. Do not change unless you know your AD is configured to use a different attribute for user name. If you do change it, see the section on Changing user/group name attributes below</td>
+<td width="220" valign="top">cn</td>
+</tr>
+<tr>
+<td width="130" valign="top">User Object class</td>
+<td width="350" valign="top"> </td>
+<td width="220" valign="top">user</td>
+</tr>
+<tr>
+<td width="130" valign="top">Group base DN</td>
+<td width="350" valign="top"> LDAP query to find groups in AD – NB only groups defined under this path will be visible to Weblogic</td>
+<td width="220" valign="top">CN=Builtin,DC=xyzcorp,DC=com</td>
+</tr>
+<tr>
+<td width="130" valign="top">GUID attribute</td>
+<td width="350" valign="top">The attribute used to define object GUIDs in AD</td>
+<td width="220" valign="top"><code>objectguid</code></td>
+</tr>
+</tbody>
+</table>
+<p style="padding-left: 60px;"><strong>Reordering Providers</strong></p>
+<p style="padding-left: 60px;">Return to the main Authentication Provider screen (Security Realms-&gt;myrealm-&gt;Providers-&gt;Authentication). Click the Reorder button, then select the tickbox next to your ActiveDirectoryAuthenticator (ADAuthenticator in our example), then use the shuttle control to put the ActiveDirectoryAuthenticator at the top of the list.</p>
+<p style="padding-left: 60px;"><strong>Changing User/Group Name Attributes</strong></p>
+<p style="padding-left: 60px;">If your AD server uses a different attribute for User Name you will need to change the User Name attribute from the default “cn”. If you do change this attribute, you will also need to change the settings for AllUsersFilter and UserFromNameFilter as shown in the table below (using the example of the user name being stored in an attribute called AnOtherUserAttribute)</p>
+<table border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="233" valign="top">Attribute Name</td>
+<td width="233" valign="top">Default Setting</td>
+<td width="233" valign="top">Required New Setting</td>
+</tr>
+<tr>
+<td width="233" valign="top"><code>UserNameAttribute</code></td>
+<td width="233" valign="top"><code>cn</code></td>
+<td width="233" valign="top"><strong>AnOtherUserAttribute</strong></td>
+</tr>
+<tr>
+<td width="233" valign="top"><code>AllUsersFilter</code></td>
+<td width="233" valign="top"><code>(&amp;(cn=*)(objectclass=person))</code></td>
+<td width="233" valign="top"><code>(&amp;(</code><strong>AnOtherUserAttribute</strong><code> =*)(objectclass=person))</code></td>
+</tr>
+<tr>
+<td width="233" valign="top"><code>UserFromNameFilter</code></td>
+<td width="233" valign="top"><code>(&amp;(cn=%u)(objectclass=person))</code></td>
+<td width="233" valign="top"><code>(&amp;(</code><strong>AnOtherUserAttribute</strong><code> =%u)(objectclass=person))</code></td>
+</tr>
+</tbody>
+</table>
+<p style="padding-left: 60px;">For UserName Attribute only, you also need to add two properties to the Identity Store configuration (user.login.attr and and username.attr) to tell it about the attribute you’re expecting to get user name from (it defaults to using “uid” if none is specified). These settings are reached via the Security Provider Configuration screen, which is accessed via Enterprise Manager. Select Weblogic Domain -&gt; bifoundation_domain-&gt;(right click) Security -&gt; Security Provider Configuration.</p>
+<p style="padding-left: 60px;"> </p>
+<p> <a href="http://www.majendi.com/blog/wp-content/uploads/2011/03/ad5.png"><img loading="lazy" decoding="async" class="alignleft size-full wp-image-23" title="Security Provider" src="http://www.majendi.com/blog/wp-content/uploads/2011/03/ad5.png" alt="" width="619" height="685"></a></p>
+<p style="padding-left: 60px;"> </p>
+<p style="padding-left: 60px;"> </p>
+<p style="padding-left: 60px;"> </p>
+<p style="padding-left: 60px;"> </p>
+<p style="padding-left: 60px;"> </p>
+<p style="padding-left: 60px;"> </p>
+<p style="padding-left: 60px;"> </p>
+<p style="padding-left: 60px;"> </p>
+<p style="padding-left: 60px;"> </p>
+<p style="padding-left: 60px;"> </p>
+<p style="padding-left: 60px;"> </p>
+<p style="padding-left: 60px;"> </p>
+<p style="padding-left: 60px;"> </p>
+<p style="padding-left: 60px;"> </p>
+<p style="padding-left: 60px;"> </p>
+<p style="padding-left: 60px;">This brings up the main Security Provider Configuration screen, find the Identity Store Provider section in the middle of the screen and select the “Configure…” button to bring up the Identity Store Configuration screen. Click on the green + icon to add the new properties to the Identity Store and as stated above, two new properties need to be added, user.login.attr and username.attr, both set to the value of the alternate user name attribute.</p>
+<p style="padding-left: 60px;"> </p>
+<p style="padding-left: 30px;"><a href="http://www.majendi.com/blog/wp-content/uploads/2011/03/ad6.png"><img loading="lazy" decoding="async" class="alignleft size-full wp-image-24" title="BI System User" src="http://www.majendi.com/blog/wp-content/uploads/2011/03/ad6.png" alt="" width="719" height="466"></a></p>
+<p style="padding-left: 60px;"> </p>
+<p class="8GeneralText" style="margin: 0cm 0cm 6pt; padding-left: 90px;"><span lang="EN-US"><span style="font-family: Garamond;"><span style="color: #000000;">On install, Oracle BI EE creates an internal account in the Weblogic LDAP store, BISystemUser, which is used for service-to-service authentication. The credentials of this account are stored in the Credential Store under the system.user key. Before you proceed any further you need to point this system.user key to a set of credentials available in Active Directory.</span></span></span></p>
+<p class="8GeneralText" style="margin: 0cm 0cm 6pt; padding-left: 90px;"><span lang="EN-US"><span style="font-family: Garamond;"><span style="color: #000000;">You can if you wish use the credentials of an existing user, however we would recommend creating a user account explicitly for this purpose – this is not an ordinary user account but rather a set of credentials used to authenticate services within the system to each other.</span></span></span></p>
+<p class="8GeneralText" style="margin: 0cm 0cm 6pt; padding-left: 90px;"><span lang="EN-US"><span style="font-family: Garamond;"><span style="color: #000000;">Whether you decided to use an existing account or create a new one, the process for changing the system.user is the same. </span></span></span></p>
+<p style="padding-left: 90px;"><span style="font-size: small;"> </span><br style="mso-ignore: vglayout;"><span style="font-family: &amp;amp;amp; font-size: 12pt; mso-bidi-font-size: 10.0pt; mso-fareast-font-family: 'Times New Roman'; mso-bidi-font-family: 'Times New Roman'; mso-ansi-language: EN-US; mso-fareast-language: EN-GB; mso-bidi-language: AR-SA;" lang="EN-US"><span style="color: #000000;">In Enterprise Manager, select Weblogic Domain -&gt; bifoundation_domain-&gt;(right click) Security -&gt; Credentials, this brings up the Credential Store configuration screen. Select the oracle.bi.system map, expand it and select the system.user key. Reset the username and password to your chosen account credentials – the example below shows resetting to a new bisystemuser </span></span></p>
+<p style="padding-left: 90px;">account created in Active Directory to replace the BISystemUser account in the default WLS LDAP referenced by the Default Authenticator.</p>
+<p style="padding-left: 90px;">Next you need to ensure your new system user account is part of the BISystem Application Role.</p>
+<p style="padding-left: 90px;">In Enterprise Manager, select Weblogic Domain -&gt; bifoundation_domain-&gt;(right click) Security -&gt;Application Roles. This brings up the Application Roles configuration screen.<br>
+In the drop-down box labelled “Application Stripe to Search”, select “obi” and press the green “play” button next to the Role Name text box.</p>
+<p style="padding-left: 90px;">This will bring up a list of application roles, one of which should be BISystem account created in Active Directory to replace the BISystemUser account in the default WLS LDAP referenced by the Default Authenticator.</p>
+<p style="padding-left: 90px;">Next you need to ensure your new system user account is part of the BISystem Application Role In Enterprise Manager, select Weblogic Domain -&gt; bifoundation_domain-&gt;(right click) Security Application Roles. This brings up the Application Roles configuration screen</p>
+<p style="padding-left: 90px;">In the drop-down box labelled “Application Stripe to Search”, select “obi” and press the green “play” button next to the Role Name text box. This will bring up a list of application roles, one of which should be BISystem</p>
+<p style="padding-left: 90px;">Select BISystem, and click the “Edit” button to edit the application role.</p>
+<p><a href="http://www.majendi.com/blog/wp-content/uploads/2011/03/ad8.png"><img loading="lazy" decoding="async" class="alignleft size-full wp-image-27" title="Application Roles" src="http://www.majendi.com/blog/wp-content/uploads/2011/03/ad8.png" alt="" width="551" height="331"></a></p>
+<p style="padding-left: 60px;"> </p>
+<p style="padding-left: 60px;"> </p>
+<p style="padding-left: 60px;"> </p>
+<p style="padding-left: 60px;"> </p>
+<p style="padding-left: 60px;"> </p>
+<p style="padding-left: 60px;"> </p>
+<p style="padding-left: 60px;"> </p>
+<p style="padding-left: 60px;"> </p>
+<p style="padding-left: 60px;">In the Edit Application Role screen, scroll down to the Users section and click on the button marked “Add User”.</p>
+<p style="padding-left: 60px;">An Add User dialog will appear. Either type your system user username into the User Name box or for a full list of users, leave it blank.</p>
+<p> </p>
+<p><a href="http://www.majendi.com/blog/wp-content/uploads/2011/03/ad9.png"><img loading="lazy" decoding="async" class="alignleft size-full wp-image-28" title="Add User to Role" src="http://www.majendi.com/blog/wp-content/uploads/2011/03/ad9.png" alt="" width="647" height="574"></a></p>
+<p style="padding-left: 60px;"> </p>
+<p style="padding-left: 60px;"> </p>
+<p style="padding-left: 60px;"> </p>
+<p style="padding-left: 60px;"> </p>
+<p style="padding-left: 60px;"> </p>
+<p style="padding-left: 60px;"> </p>
+<p style="padding-left: 60px;"> </p>
+<p style="padding-left: 60px;"> </p>
+<p style="padding-left: 60px;"> </p>
+<p style="padding-left: 60px;"> </p>
+<p style="padding-left: 60px;"> </p>
+<p style="padding-left: 60px;"> </p>
+<p style="padding-left: 60px;"> </p>
+<p style="padding-left: 60px;">Again, click the green “Play” button next to the text box and a list of users will appear in the “Available Users” selection box.</p>
+<p style="padding-left: 60px;">Select the name of your system user account and use the shuttle control to move it into the list of Selected Users. Click OK to dismiss the Add User dialog.</p>
+<p style="padding-left: 60px;">Back in the main Edit Application Role Screen, click the OK button in the top right of the screen to apply the changes to the BI System Application Role.</p>
+<p style="padding-left: 60px;">The final stage of configuring the new system user is to ensure they are part of the Weblogic Global Admin role.</p>
+<p style="padding-left: 60px;">Log into Weblogic Admin console</p>
+<p style="padding-left: 60px;">Select Security Realms from the left-hand menu, click on the link to your security realm in the main screen (e.g. myrealm), then select Roles and Policies from the tabs along the top </p>
+<p style="padding-left: 60px;">In the list of roles, click on the plus sign to expand Global Roles, then Roles, then click on the link marked View Role Conditions for the Admin Role.</p>
+<p style="padding-left: 60px;">Ensure the conditions specified will match your user, either directly, or by virtue of a group they belong to (e.g. condition may be User = bisystemuser or Group=Administrators</p>
+<p style="padding-left: 60px;">If you have made any changes, click the Save button. Changes should be applied immediately</p>
+<p style="padding-left: 60px;">If you have made any changes, click the Save button. Changes should be applied immediately</p>
+<p style="padding-left: 60px;">Once you have changed the system user credentials in this way, you will need to restart the BI Server and BI Presentation Server before  these changes will take effect. The easiest way to do this is via Enterprise Manager – select Business Intelligence and Restart All Components.</p>
+<p style="padding-left: 60px;"><strong>Mapping Active Directory Groups to Application Roles</strong></p>
+<p style="padding-left: 60px;">Access to functions within Oracle BI is controlled via Application Roles. For a detailed discussion of the purpose and function of the Application Roles, please see the product documentation, for now it will suffice to say that in order for your Active Directory domain users to be able to use the system, they (or rather the groups they are in) need to be mapped to Application Roles.</p>
+<p style="padding-left: 60px;">The process for doing this is as for assigning the system user to the BISystemRole, described above, with the exception that we map groups to the role, not just an individual user.</p>
+<p style="padding-left: 60px;"><strong>Testing your changes</strong></p>
+<p style="padding-left: 60px;">Once you’ve restarted Weblogic, check that you can still log into the Weblogic Administrative Console as the Weblogic admin user you specified during install.</p>
+<p style="padding-left: 60px;">Next check you can log in to Oracle BI using the credentials of one of the Active Directory users.</p>
+<p style="padding-left: 120px;"> </p>
+<p>Source:</p>
+<blockquote><p>Oracle White Paper:  Dec 2010.  Configuring authentication and SSO with Active Directory and Windows Native Authentication in Oracle Business Intelligence Enterprise Edition. </p></blockquote>
+<p>References</p>
+<p>[1] Oracle® Fusion Middleware Security Guide for Oracle Business Intelligence Enterprise Edition 11g Release 1 (11.1.1) <a href="http://download.oracle.com/docs/cd/E14571_01/bi.1111/e10543/toc.htm">http://download.oracle.com/docs/cd/E14571_01/bi.1111/e10543/toc.htm</a></p>
+<p>[2] Configuring Single Sign-On with Microsoft Clients</p>
+<p><a href="http://download.oracle.com/docs/cd/E12839_01/web.1111/e13707/sso.htm">http://download.oracle.com/docs/cd/E12839_01/web.1111/e13707/sso.htm</a></p>
+<p>[3] Java GSS-API Troubleshooting Guide</p>
+<p><a href="http://download.oracle.com/javase/1.5.0/docs/guide/security/jgss/tutorials/Troubleshooting.html">http://download.oracle.com/javase/1.5.0/docs/guide/security/jgss/tutorials/Troubleshooting.html</a></p>
+<p>[4] Microsoft support note on enabling DES encryption on Windows 2008 and Windows 7</p>
+<p><a href="http://support.microsoft.com/kb/977321">http://support.microsoft.com/kb/977321</a></p>
+<p>[5] Microsoft TechNet setspn overview</p>
+<p><a href="http://technet.microsoft.com/en-us/library/cc773257(WS.10).aspx">http://technet.microsoft.com/en-us/library/cc773257(WS.10).aspx</a></p>
+<p>[6] Securing Oracle Weblogic Server</p>
+<p><a href="http://download.oracle.com/docs/cd/E14571_01/web.1111/e13707/toc.htm">http://download.oracle.com/docs/cd/E14571_01/web.1111/e13707/toc.htm</a></p>
+					<div class="category-and-tags">
+				<a href="/category/installation/" rel="category tag">Installation</a> <a href="/category/obiee-11g/" rel="category tag">Obiee 11g</a> <a href="/category/uncategorized/" rel="category tag">Uncategorized</a>							</div>
+			
+
+</div><!-- .entry-content -->
+</article><!-- #post-22699 -->
+	<nav class="navigation post-navigation" aria-label="Posts">
+		<h2 class="screen-reader-text">Post navigation</h2>
+		<div class="nav-links"><div class="nav-previous"><a href="/goodbye-db-hello-world/" rel="prev">Previous post</a></div><div class="nav-next"><a href="/obiee-11g-integration-with-active-directory-part-2/" rel="next">Next post</a></div></div>
+	</nav>
+<div id="comments" class="fbox comments-area">
+            <h2 class="comments-title">
+            Comments (4)        </h2><!-- .comments-title -->
+
+        
+        <ol class="comment-list">
+            		<li id="comment-143" class="pingback even thread-even depth-1">
+			<div class="comment-body">
+				Pingback: <a href="http://www.majendi.com/blog/?p=34" class="url" rel="ugc external nofollow">OBIEE 11g Integration With Active Directory – Part 2 | The Majendi OBIEE Experience</a> 			</div>
+		</li><!-- #comment-## -->
+		<li id="comment-144" class="comment odd alt thread-odd thread-alt depth-1 parent">
+			<article id="div-comment-144" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="https://secure.gravatar.com/avatar/f1510eea045d6c46866b0b80b12af11148e82597687f31a31ae5ae4d0a53b074?s=60&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/f1510eea045d6c46866b0b80b12af11148e82597687f31a31ae5ae4d0a53b074?s=120&amp;d=mm&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60" loading="lazy" decoding="async">						<b class="fn"><a href="http://sphyrna.wordpress.com/" class="url" rel="ugc external nofollow">Adrian</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="/obiee-11g-integration-with-active-directory/#comment-144"><time datetime="2011-05-06T07:35:33+00:00">6 May 2011 at 7:35 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Hi,</p>
+<p>Thanks for the helpful article. I would like to inquire if you manage to setup more than one active AD at a time.</p>
+<p>So let’s say user A is AD1 and user B is in AD2 and we connect both ADs to Weblogic. Is there anyway so both users can login?</p>
+<p>Thanks.</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+		<ol class="children">
+		<li id="comment-145" class="comment byuser comment-author-admin bypostauthor even depth-2">
+			<article id="div-comment-145" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="https://secure.gravatar.com/avatar/09058953acc2275d2b2ed59d39fabd0864668936a7c7135dbbcf3597d48ddb26?s=60&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/09058953acc2275d2b2ed59d39fabd0864668936a7c7135dbbcf3597d48ddb26?s=120&amp;d=mm&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60" loading="lazy" decoding="async">						<b class="fn"><a href="http://uk.linkedin.com/in/majendi" class="url" rel="ugc external nofollow">Adrian</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="/obiee-11g-integration-with-active-directory/#comment-145"><time datetime="2011-05-09T07:55:53+00:00">9 May 2011 at 7:55 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>I have not checked, I am sure you can read the manual like I could, but my guess is that only one AD can be active (maybe they fixed that in 115?)</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-146" class="comment odd alt thread-even depth-1">
+			<article id="div-comment-146" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="https://secure.gravatar.com/avatar/076a8123fef80d662dad253bda3bcd94a9f6bf314b1ba1b79f9d373e2fa222dc?s=60&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/076a8123fef80d662dad253bda3bcd94a9f6bf314b1ba1b79f9d373e2fa222dc?s=120&amp;d=mm&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60" loading="lazy" decoding="async">						<b class="fn">Ed</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="/obiee-11g-integration-with-active-directory/#comment-146"><time datetime="2011-05-10T10:07:20+00:00">10 May 2011 at 10:07 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Hi, good tutorial. What about configuring two Active Directory Authenticators. I have both working  (ie, I can see the users in ‘users &amp; Groups’) however I can only log into BI with which ever is highest in the list.</p>
+<p>Any Ideas?</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+        </ol><!-- .comment-list -->
+
+                    <p class="no-comments">Comments are closed.</p>
+    
+</div><!-- #comments -->
+            </main><!-- #main -->
+        </div><!-- #primary -->
+                    </div>
+</div><!-- #content -->
+
+
+
+<footer id="colophon" class="site-footer clearfix">
+
+
+			<div class="content-wrap">
+			<div class="site-footer-widget-area">
+				<section id="block-4" class="widget widget_block widget_media_image">
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="256" src="/wp-content/uploads/2023/08/linked_associate_light_3840-%C3%97-2160-1024x256.png" alt="" class="wp-image-24108" srcset="/wp-content/uploads/2023/08/linked_associate_light_3840-×-2160-1024x256.png 1024w, /wp-content/uploads/2023/08/linked_associate_light_3840-×-2160-300x75.png 300w, /wp-content/uploads/2023/08/linked_associate_light_3840-×-2160-768x192.png 768w, /wp-content/uploads/2023/08/linked_associate_light_3840-×-2160-1536x384.png 1536w, /wp-content/uploads/2023/08/linked_associate_light_3840-×-2160-2048x512.png 2048w, /wp-content/uploads/2023/08/linked_associate_light_3840-×-2160-850x213.png 850w" sizes="auto, (max-width: 1024px) 100vw, 1024px"></figure>
+</section>			</div>
+		</div>
+
+	
+
+	<div class="site-info">
+					©2026 Oracle Analytics by Adrian Ward			<!-- Delete below lines to remove copyright from footer -->
+			<span class="footer-info-right">
+				 | WordPress Theme by <a href="https://superbthemes.com/" rel="nofollow noopener"> SuperbThemes</a>
+			</span>
+			<!-- Delete above lines to remove copyright from footer -->
+
+			</div><!-- .site-info -->
+
+	
+
+</footer><!-- #colophon -->
+
+
+<div id="smobile-menu" class="mobile-only"></div>
+<div id="mobile-menu-overlay"></div>
+
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/minimalist-blogger-x/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+    <script>
+        "use strict";
+        /(trident|msie)/i.test(navigator.userAgent) && document.getElementById && window.addEventListener && window.addEventListener("hashchange", function() {
+            var t, e = location.hash.substring(1);
+            /^[A-z0-9_-]+$/.test(e) && (t = document.getElementById(e)) && (/^(?:a|select|input|button|textarea)$/i.test(t.tagName) || (t.tabIndex = -1), t.focus())
+        }, !1);
+    </script>
+    <script id="minimalist-blogger-x-navigation-js" src="/wp-content/themes/minimalist-blogger-x/js/navigation.js?ver=20170823"></script>
+<script id="minimalist-blogger-x-skip-link-focus-fix-js" src="/wp-content/themes/minimalist-blogger-x/js/skip-link-focus-fix.js?ver=20170823"></script>
+<script id="minimalist-blogger-x-script-js" src="/wp-content/themes/minimalist-blogger-x/js/script.js?ver=20160720"></script>
+<script id="minimalist-blogger-x-accessibility-js" src="/wp-content/themes/minimalist-blogger-x/js/accessibility.js?ver=20160720"></script>
+<script id="wp-emoji-settings" type="application/json">
+{"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"/wp-includes/js/wp-emoji-release.min.js?ver=7.0"}}
+</script>
+<script type="module">
+/*! This file is auto-generated */
+const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(window._wpemojiSettings=a,"wpEmojiSettingsSupports"),s=["flag","emoji"];function i(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function c(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0);const a=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);return t.every((e,t)=>e===a[t])}function p(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var n=e.getImageData(16,16,1,1);for(let e=0;e<n.data.length;e++)if(0!==n.data[e])return!1;return!0}function u(e,t,n,a){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!a(e,"\ud83e\u1fac8")}return!1}function f(e,t,n,a){let r;const o=(r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):document.createElement("canvas")).getContext("2d",{willReadFrequently:!0}),s=(o.textBaseline="top",o.font="600 32px Arial",{});return e.forEach(e=>{s[e]=t(o,e,n,a)}),s}function r(e){var t=document.createElement("script");t.src=e,t.defer=!0,document.head.appendChild(t)}a.supports={everything:!0,everythingExceptFlag:!0},new Promise(t=>{let n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),c.toString(),p.toString()].join(",")+"));",a=new Blob([e],{type:"text/javascript"});const r=new Worker(URL.createObjectURL(a),{name:"wpTestEmojiSupports"});return void(r.onmessage=e=>{i(n=e.data),r.terminate(),t(n)})}catch(e){}i(n=f(s,u,c,p))}t(n)}).then(e=>{for(const n in e)a.supports[n]=e[n],a.supports.everything=a.supports.everything&&a.supports[n],"flag"!==n&&(a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&a.supports[n]);var t;a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&!a.supports.flag,a.supports.everything||((t=a.source||{}).concatemoji?r(t.concatemoji):t.wpemoji&&t.twemoji&&(r(t.twemoji),r(t.wpemoji)))});
+//# sourceURL=/wp-includes/js/wp-emoji-loader.min.js
+</script>
+</body>
+
+</html>
